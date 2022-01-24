@@ -1,3 +1,5 @@
 cert/*
 data/*
 .env
+volumes
+*backup*
