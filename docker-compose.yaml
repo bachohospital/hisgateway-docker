@@ -48,7 +48,7 @@ services:
       - ${PATH_CERT}:/var/private/ssl
       - ./config/java.config:/etc/crypto-policies/back-ends/java.config
     restart: always
-    dns:   
+    dns:
       - 8.8.8.8
       - 203.157.19.113
     networks:
@@ -71,7 +71,7 @@ services:
       - SECRET_KEY=123456
       - HOSPCODE=${HOSPCODE}
       - BROKER_URL=${BROKER_URL}
-    dns:   
+    dns:
       - 8.8.8.8
       - 203.157.19.113
     links:
@@ -84,10 +84,10 @@ services:
     image: mophos/hisgateway-history-api
     restart: always
     container_name: history-api
-    dns:   
+    dns:
       - 8.8.8.8
       - 203.157.19.113
-    volumes: 
+    volumes:
       - ${PATH_CERT}:/var/private/ssl
       - ${PATH_DATA}:/var/data
     environment:
@@ -107,7 +107,7 @@ services:
     container_name: nginx
     restart: always
     ports:
-    - "${PORT}:80"
+      - "${PORT}:80"
     volumes:
       - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
